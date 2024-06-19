@@ -2,6 +2,9 @@ let express = require('express');
 const path = require('path');
 let app = express();
 
+app.use('/public',express.static(path.join(__dirname + '/public')));
+
+
 // app.get("/", (request, response) => {
 
 //     console.log("Hello World");
