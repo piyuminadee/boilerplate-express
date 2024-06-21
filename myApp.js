@@ -29,6 +29,13 @@ app.get('/',  function(req, res){
 })
 
 
+app.get('/json', (requ, res) => {
+    console.log("json")
+    res.json({"message": "Hello json"})
+}
+
+)
+
 
 
 
