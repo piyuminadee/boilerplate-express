@@ -29,16 +29,17 @@ app.get('/',  function(req, res){
 })
 
 
-app.get('/json', (requ, res) => {
+app.get('/json', (req, res, next) => {
     console.log("json")
 
-    
+    const logMsg = `${req.method} ${req.path} - ${req.ip}`;
     let message = "Hello json";
-
+    console.log(logMsg);
     if(process.env.MESSAGE_STYLE === "uppercase"){
          message = message.toUpperCase();
     }
     res.json({message : message});
+    next();
 }
 
 )
