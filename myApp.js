@@ -11,6 +11,12 @@ app.use('/public',express.static(path.join(__dirname + '/public')));
 //     return response.send("Hello Express");
 // }
 // );
+app.get('/now', (req,res,next) => {
+    req.time = new Date().toString();
+    next();
+},function(req,res){
+    res.send({time : req.time})
+})
 
 
 app.get('/',  function(req, res){
