@@ -19,6 +19,17 @@ app.get('/now', (req,res,next) => {
 })
 
 
+app.get('/name', (req,res)=>{
+    var firstName = req.query.first;
+  var lastName = req.query.last;
+  var { first: firstName, last: lastName } = req.query;
+  // Use template literals to form a formatted string
+  res.json({
+    name: `${firstName} ${lastName}`
+  });
+})
+
+
 app.get('/:word/echo', (req,res) => {
     const {word} = req.params;
 
