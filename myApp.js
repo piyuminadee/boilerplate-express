@@ -1,9 +1,11 @@
 let express = require('express');
+let bodyParser = require('body-parser')
 const path = require('path');
 let app = express();
 
 app.use('/public',express.static(path.join(__dirname + '/public')));
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // app.get("/", (request, response) => {
 
